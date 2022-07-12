@@ -1,0 +1,81 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+html,
+body
+{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+canvas {
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: none;
+}
+
+.button-control {
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    background: white;
+    border-radius: 20px;
+    z-index: 3;
+    width: 12rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.button-control strong {
+    color: #0a1ac7;
+}
+
+.button-control img {
+    pointer-events: all;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+@media (max-height: 428px) and (orientation: landscape) {
+    .button-control {
+        margin-bottom: 1rem;
+    }
+}
