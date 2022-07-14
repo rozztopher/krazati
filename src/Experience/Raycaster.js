@@ -2,6 +2,7 @@ import * as THREE from "three";
 import Experience from "./Experience";
 import Mouse from "./Mouse";
 import Sizes from "./Utils/Sizes";
+import TimelineControls from "./domControls/TimelineControls";
 
 export default class Raycaster {
   constructor() {
@@ -18,6 +19,8 @@ export default class Raycaster {
       this.mouse.x = (event.clientX / this.sizes.width) * 2 - 1;
       this.mouse.y = -(event.clientY / this.sizes.height) * 2 + 1;
     });
+
+    window.addEventListener("click", () => {this.triggerEvent()});
   }
 
   addObjectToTest(obj) {
@@ -33,12 +36,18 @@ export default class Raycaster {
       if (!this.currentIntersect) {
       }
 
-      this.currentIntersect = intersects[0];
+      this.currentIntersect = intersects[0].object;
     } else {
       if (this.currentIntersect) {
       }
 
       this.currentIntersect = null;
+    }
+  }
+
+  triggerEvent() {
+    if (this.currentIntersect) {
+      console.log(this.currentIntersect.name)
     }
   }
 }

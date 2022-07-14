@@ -19,12 +19,12 @@ export default class Environment {
   }
 
   setMainLight() {
-    this.mainLight = new THREE.DirectionalLight("#ffffff", 4);
+    this.mainLight = new THREE.DirectionalLight("#ff00dd", 1);
     this.mainLight.castShadow = true;
     this.mainLight.shadow.camera.far = 15;
     this.mainLight.shadow.mapSize.set(1024, 1024);
     this.mainLight.shadow.normalBias = 0.05;
-    this.mainLight.position.set(-3, 2, -1.25);
+    this.mainLight.position.set(-2.6, -4, 2.3);
     this.scene.add(this.mainLight);
 
     if (this.debug.active) {
@@ -32,7 +32,7 @@ export default class Environment {
         .add(this.mainLight, "intensity")
         .name("mainLightIntensity")
         .min(0)
-        .max(100)
+        .max(10)
         .step(0.001);
 
       this.debugFolder
@@ -55,6 +55,11 @@ export default class Environment {
         .min(-20)
         .max(20)
         .step(0.001);
+        console.log(this.mainLight)
+
+        this.debugFolder
+        .addColor(this.mainLight, "color")
+        .name("colour");
     }
   }
 
@@ -126,7 +131,7 @@ export default class Environment {
         .add(this.environmentMap, "intensity")
         .name("envMapIntensity")
         .min(0)
-        .max(10)
+        .max(4)
         .step(0.001)
         .onChange(this.environmentMap.updateMaterials);
     }

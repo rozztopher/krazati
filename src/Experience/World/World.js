@@ -14,9 +14,10 @@ export default class World {
     this.resources.on("ready", () => {
       this.environment = new Environment();
       this.particle = new Particle();
-      console.log(this.particle.heroMolecule)
-      this.raycaster.addObjectToTest(this.particle.kras)
-      this.rotationControls = new RotationControls(this.particle.heroMolecule)
+      this.particle.numbers.forEach(number => {
+        this.raycaster.addObjectToTest(number)
+      })
+      this.rotationControls = new RotationControls(this.particle.heroMolecule, this.particle.labels)
     });
   }
 

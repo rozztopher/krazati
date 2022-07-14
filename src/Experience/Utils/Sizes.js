@@ -4,15 +4,16 @@ export default class Sizes extends EventEmitter {
   constructor() {
     super();
 
+    this.container = document.querySelector('#app-container');
     // Setup
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    this.width = this.container.clientWidth
+    this.height = this.container.clientHeight
     this.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
     // Resize event
     window.addEventListener("resize", () => {
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
+      this.width = this.container.clientWidth
+      this.height = this.container.clientHeight
       this.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
       this.trigger("resize");
