@@ -17,6 +17,11 @@ export default [
     path: "models/molecule/molecule.gltf",
   },
   {
+    name: "reference",
+    type: "gltfModel",
+    path: "models/molecule/new.gltf",
+  },
+  {
     name: "background",
     type: "texture",
     path: "images/background.png",

@@ -9,11 +9,11 @@ export default class World {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
-    this.raycaster = new Raycaster()
 
     this.resources.on("ready", () => {
       this.environment = new Environment();
       this.particle = new Particle();
+      this.raycaster = new Raycaster();
       this.particle.numbers.forEach(number => {
         this.raycaster.addObjectToTest(number)
       })

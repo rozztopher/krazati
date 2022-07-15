@@ -55,7 +55,6 @@ export default class Environment {
         .min(-20)
         .max(20)
         .step(0.001);
-        console.log(this.mainLight)
 
         this.debugFolder
         .addColor(this.mainLight, "color")

@@ -36,7 +36,6 @@ export default class DragControls {
     this.targetRotationOnMouseDownX = this.targetRotationX;
     this.mouseYOnMouseDown = event.clientY - (window.innerHeight / 2);
     this.targetRotationOnMouseDownY = this.targetRotationY;
-    console.log("mousedown");
   }
 
   onDocumentMouseMove(event) {
@@ -45,8 +44,6 @@ export default class DragControls {
       this.targetRotationX = (this.mouseX - this.mouseXOnMouseDown) * 0.00025;
       this.mouseY = event.clientY - (window.innerHeight/2);
       this.targetRotationY = (this.mouseY - this.mouseYOnMouseDown) * 0.00025;
-      console.log("mousemove");
-      console.log(this.mouseX, this.targetRotationX, this.mouseY, this.targetRotationY)
     }
   }
 
@@ -88,10 +85,8 @@ export default class DragControls {
         this.targetRotationY
       );
 
-      console.log(this.targetRotationX, this.targetRotationY, this.slowingFactor)
       this.targetRotationY = this.targetRotationY * (1 - this.slowingFactor);
       this.targetRotationX = this.targetRotationX * (1 - this.slowingFactor);
-      console.log(this.targetRotationX)
     }
   }
 }

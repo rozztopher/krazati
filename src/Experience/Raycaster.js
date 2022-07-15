@@ -2,7 +2,9 @@ import * as THREE from "three";
 import Experience from "./Experience";
 import Mouse from "./Mouse";
 import Sizes from "./Utils/Sizes";
+import AnimationControls from "./domControls/AnimationControls";
 import TimelineControls from "./domControls/TimelineControls";
+import World from "./World/World";
 
 export default class Raycaster {
   constructor() {
@@ -12,6 +14,8 @@ export default class Raycaster {
     this.raycaster = new THREE.Raycaster();
     this.mouse = new Mouse();
     this.sizes = new Sizes();
+    this.animationControls = new AnimationControls()
+    this.timelineControls = new TimelineControls()
     this.currentIntersect = null;
     this.group = [];
 
@@ -47,7 +51,18 @@ export default class Raycaster {
 
   triggerEvent() {
     if (this.currentIntersect) {
-      console.log(this.currentIntersect.name)
+      const number = this.currentIntersect.name
+      if (number === "one") {
+        this.timelineControls.transitionSection(0)
+        const event = new Event('insertcys');
+        window.dispatchEvent(event)
+      } else if (number === "two") {
+        this.timelineControls.transitionSection(1)
+      } else if (number === "three") {
+        this.timelineControls.transitionSection(2)
+      } else if (number === "four") {
+        this.timelineControls.transitionSection(3)
+      }
     }
   }
 }

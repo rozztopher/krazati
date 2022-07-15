@@ -15,7 +15,7 @@ export default class Number {
   }
 
   setGeometry() {
-    this.geometry = new THREE.CircleGeometry(12.5, 32);
+    this.geometry = new THREE.CircleGeometry(0.125, 32);
   }
 
   setMaterial(value) {

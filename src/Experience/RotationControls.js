@@ -28,9 +28,7 @@ export default class RotationControls {
 
   startRotation() {
     this.static = false
-    console.log(this.fadeItems)
     for (let i = 0; i < this.fadeItems.length; i++) {
-      console.log(this.fadeItems[i])
       this.fadeItems[i].visible = false
       gsap.timeline().to(this.fadeItems[i].children[0].material, { duration: 0.5, opacity: 0 });
     }
@@ -38,19 +36,19 @@ export default class RotationControls {
 
   resetRotation() {
     this.resetting = true;
-    gsap.timeline().to(this.mesh.position, { duration: 0.5, x: 0, y: 0, z: 0 });
-    gsap
-      .timeline({
-        onComplete: () => {
-          this.resetting = false;
-          this.time.clock = new THREE.Clock();
-          this.static = true
-          for (let i = 0; i < this.fadeItems.length; i++) {
-            // this.fadeItems[i].visible = true
-            // gsap.timeline().to(this.fadeItems[i].children[0].material, { duration: 0.5, opacity: 1 });
-          }
-        },
-      })
-      .to(this.mesh.rotation, { duration: 1, x: 0, y: 0, z: 0 });
+    gsap.timeline().to(this.mesh.position, { duration: 0.5, x: 0, y: 0.33, z: 0 });
+    // gsap
+    //   .timeline({
+    //     onComplete: () => {
+    //       this.resetting = false;
+    //       this.time.clock = new THREE.Clock();
+    //       this.static = true
+    //       for (let i = 0; i < this.fadeItems.length; i++) {
+    //         // this.fadeItems[i].visible = true
+    //         // gsap.timeline().to(this.fadeItems[i].children[0].material, { duration: 0.5, opacity: 1 });
+    //       }
+    //     },
+    //   })
+    //   .to(this.mesh.rotation, { duration: 1, x: 0, y: 0, z: 0 });
   }
 }

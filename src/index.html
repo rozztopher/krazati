@@ -7,18 +7,24 @@
 </head>
 <body>
     <img class="background" src="./background.png"/>
-    <div class="overlay">
-        <div class="button-control">
-            <img id="left-arrow" class="pointer" src="./icons/arrow-left.svg" alt="arrow left"/>
-            <strong class="button-text">KRAS G12C</strong>
-            <img id="right-arrow" class="pointer" src="./icons/arrow-right.svg" alt="arrow right"/>
-        </div>
-        <div class="text-content">
 
-        </div>
-    </div>
     <div id="app-container">
-        <canvas class="webgl"></canvas>
+        <div class="webgl-container">
+            <div class="overlay">
+                <div class="button-control">
+                    <img id="left-arrow" class="pointer" src="./icons/arrow-left.svg" alt="arrow left"/>
+                    <strong class="button-text">KRAS G12C</strong>
+                    <img id="right-arrow" class="pointer" src="./icons/arrow-right.svg" alt="arrow right"/>
+                </div>
+                <div class="text-content">
+                    <h2 class="white" id="text-header">A master switch</h2>
+                    <div class="divider"></div>
+                    <p class="white" id="text-paragraph">There is a need to continuously control the target.</p>
+                </div>
+            </div>
+            <canvas class="webgl"></canvas>
+        </div>
+        <div class="block">Mirati Krazati</div>
     </div>
 </body>
 </html>
